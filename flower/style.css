@@ -1,0 +1,129 @@
+canvas[resize] {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+#settingswrap{
+    float: right;
+    width: 30%;
+    margin: 5%;
+}
+
+.menuebox{
+    margin: 2% 0;
+}
+
+.buttonbox{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=button]{
+    width: 30%;
+    
+    display: block;
+    
+  
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  border-radius: 4px;
+  
+  background-color: #e4e4e4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=button]:hover{
+    background-color: #A5DC86;
+}
+
+input[type=button]:disabled{
+    color: rgba(0, 0, 0, 0.2);
+}
+
+input[type=button]:active{
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+    
+/* switches from https://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/ */  
+
+.switch-field {
+  
+  /*padding: 40px;*/
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    outline: none;
+}
+
+.switch-title {
+  margin-bottom: 6px;
+}
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label {
+  float: left;
+}
+
+.switch-field label {
+    outline: none;
+    width: 50%;
+    box-sizing: border-box;
+  display: inline-block;
+  flex: 1 1 auto;
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #A5DC86;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+

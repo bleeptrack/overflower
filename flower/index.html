@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="../paper-full.js"></script>
+<script type="text/javascript" src="../generators/Flower.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/javascript" src="flowergen.js">
+</script>
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+</head>
+<body>
+    <div id="canvwrap">
+        <canvas id="myCanvas" resize></canvas>
+	</div>
+	<div id="settingswrap">
+	<div id="drawingstyle" class="menuebox switch-field">
+       
+            <input type="radio" id="colored" name="style" value="colored"  onchange="genFlower(value)" autocomplete="off" checked>
+            <label for="colored">Colored</label>
+           
+     
+       
+            <input type="radio" id="lineart" name="style" value="lineart" onchange="genFlower(value)" autocomplete="off">
+            <label for="lineart">Lineart</label>
+         
+        
+    </div>
+    
+    <div id="boxed" class="menuebox switch-field">
+            <input type="radio" name="boxed" id="free" value="nobox" onchange="genFlower(value)" autocomplete="off" checked="checked">
+            <label for="free">Free</label>
+
+            <input type="radio" name="boxed" id="box" value="inbox" onchange="genFlower(value)" autocomplete="off" >
+            <label for="box">Boxed</label>
+	</div>
+
+	<div class="buttonbox">
+	<input type="button" value="Shuffle Colors" id="shufflebtn" onclick="genFlower(value)"></input>
+	<input type="button" value="New Colors" id="newcolbtn"  onclick="genFlower(value)"></input>
+	<input type="button" value="New Leaves" id="newflowbtn"  onclick="genFlower(value)"></input>
+    </div>
+    
+</body>
+</html>
