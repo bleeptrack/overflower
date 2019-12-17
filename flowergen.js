@@ -10,6 +10,7 @@ var params = [];
 var col = true;
 var box = false;
 var shuffle = false;
+var fill = true;
 var colors = [];
 var leaves = [];
 
@@ -54,6 +55,12 @@ function render(val){
         case "nobox":
             box = false;
             break;
+	case "fill":
+	    fill = true;
+            break;
+	case "nofill":
+	    fill = false;
+            break;
         case "leaves":
             leaves = slider.noUiSlider.get();
             params = [];
@@ -69,7 +76,7 @@ function render(val){
     
 
     
-    flowie = new Flower(leaves, col, box, 500,500,8, colors, shuffle, params);
+    flowie = new Flower(leaves, col, box, fill, 500,500,8, colors, shuffle, params);
     colors = flowie.colorArr;
     document.getElementById("fillcolor1").value = colors[0].toCSS(true);
     document.getElementById("fillcolor2").value = colors[1].toCSS(true);

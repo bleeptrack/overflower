@@ -1,10 +1,11 @@
 class Flower{
     
 
-    constructor(leafnrs,colored,box,w,h,hat, colorArr, shuffle, par){
+    constructor(leafnrs,colored,box,patternFill,w,h,hat, colorArr, shuffle, par){
          
         this.colored = colored;
         this.box = box;
+        this.patternFill = patternFill;
         this.w = w;
         this.h = h;
         this.hat = hat;
@@ -237,7 +238,9 @@ generateLeaves(circlePath, nrLeaves){
         
         var finishedLeave = this.cutLeave(this.complete, path, nm, false);
         
-        this.fill(path,i, nm);
+        if(this.patternFill) {
+            this.fill(path,i, nm);
+        }
         finishedLeave.sendToBack();
         this.leaves.push(finishedLeave);
         

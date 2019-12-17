@@ -26,6 +26,16 @@
         <div id="slider"></div>
 	</div>
 	
+        <div id="fillpattern" class="menuebox switch-field">
+
+            <input type="radio" id="fill" name="fill" value="fill"  onchange="genFlower(value)" autocomplete="off" checked>
+            <label for="fill">Pattern Fill</label>
+
+            <input type="radio" id="nofill" name="fill" value="nofill" onchange="genFlower(value)" autocomplete="off">
+            <label for="nofill">No Fill</label>
+
+        </div>
+
 	<div id="drawingstyle" class="menuebox switch-field">
        
             <input type="radio" id="colored" name="style" value="colored"  onchange="genFlower(value)" autocomplete="off" checked>
