@@ -1,13 +1,15 @@
 class Flower{
     
 
-    constructor(colored,box,w,h,hat, colorArr, shuffle, par){
+    constructor(leafnrs,colored,box,w,h,hat, colorArr, shuffle, par){
          
         this.colored = colored;
         this.box = box;
         this.w = w;
         this.h = h;
         this.hat = hat;
+        this.minLeaves = 27;
+        this.maxLeaves = 32;
         
         this.colorArr = colorArr;
         console.log(this.colorArr);
@@ -16,6 +18,11 @@ class Flower{
             this.newParams = true;
         }else{
             this.newParams = false;
+        }
+        
+        if(leafnrs.length != 0){
+            this.minLeaves = parseInt(leafnrs[0]);
+            this.maxLeaves = parseInt(leafnrs[1]);
         }
         
         
@@ -29,7 +36,8 @@ class Flower{
             nrLeaves = this.rnd(30,70);
         }else{*/
             
-        nrLeaves = this.rnd(27,32);//rnd(13,30);
+        nrLeaves = this.rnd(this.minLeaves,this.maxLeaves);//rnd(13,30);
+        console.log("generating between: "+this.minLeaves+" and "+this.maxLeaves);
         //}
         console.log("nrleaves: "+nrLeaves);
         

@@ -2,20 +2,30 @@
 <html>
 <head>
 <!-- Load the Paper.js library -->
-<script type="text/javascript" src="../paper-full.js"></script>
-<script type="text/javascript" src="../generators/Flower.js"></script>
+<script src="nouislider.js"></script>
+<script type="text/javascript" src="paper-full.js"></script>
+<script type="text/javascript" src="Flower.js"></script>
 <!-- Define inlined PaperScript associate it with myCanvas -->
 <script type="text/javascript" src="flowergen.js">
 </script>
 
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="slider.css"/>
 
 </head>
 <body>
+    
+    
     <div id="canvwrap">
         <canvas id="myCanvas" resize></canvas>
 	</div>
 	<div id="settingswrap">
+	
+	<div id="leaves" class="menuebox">
+        <label>Number of Leaves in Range:</label>
+        <div id="slider"></div>
+	</div>
+	
 	<div id="drawingstyle" class="menuebox switch-field">
        
             <input type="radio" id="colored" name="style" value="colored"  onchange="genFlower(value)" autocomplete="off" checked>
@@ -36,12 +46,41 @@
             <input type="radio" name="boxed" id="box" value="inbox" onchange="genFlower(value)" autocomplete="off" >
             <label for="box">Boxed</label>
 	</div>
+	
+	<div id="fillcolor" class="menuebox colorflex">
+            <div>
+            <input type="color" id="fillcolor1" name="fillcolor1"
+            value="#f6b73c" onchange="changeColor(name,value)">
+            <label for="fillcolor1">Fill Color 1</label>
+            </div>
+
+            <div>
+            <input type="color" id="fillcolor2" name="fillcolor2"
+            value="#f6b73c" onchange="changeColor(name,value)">
+            <label for="fillcolor2">Fill Color 2</label>
+            </div>
+	</div>
+	
+	<div id="linecolor" class="menuebox colorflex">
+            <div>
+            <input type="color" id="linecolor1" name="linecolor1"
+            value="#f6b73c" onchange="changeColor(name,value)">
+            <label for="linecolor1">Line Color 1</label>
+            </div>
+            <div>
+            <input type="color" id="linecolor2" name="linecolor2"
+            value="#f6b73c" onchange="changeColor(name,value)">
+            <label for="linecolor2">Line Color 2</label>
+            </div>
+	</div>
 
 	<div class="buttonbox">
 	<input type="button" value="Shuffle Colors" id="shufflebtn" onclick="genFlower(value)"></input>
 	<input type="button" value="New Colors" id="newcolbtn"  onclick="genFlower(value)"></input>
 	<input type="button" value="New Leaves" id="newflowbtn"  onclick="genFlower(value)"></input>
     </div>
+    
+    <input type="button" value="Save SVG" id="savesvg"  onclick="downloadSVG()">
     
 </body>
 </html>

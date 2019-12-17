@@ -7,9 +7,14 @@ canvas[resize] {
     z-index:-1;
 }
 
+.colorflex{
+    display: flex;
+    justify-content: space-around;
+}
+
 #settingswrap{
     float: right;
-    width: 30%;
+    width: 35%;
     margin: 5%;
 }
 
@@ -20,6 +25,12 @@ canvas[resize] {
 .buttonbox{
     display: flex;
     justify-content: space-between;
+}
+
+#savesvg{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 input[type=button]{
