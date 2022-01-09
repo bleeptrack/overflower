@@ -9,6 +9,8 @@ var params = [];
 
 var col = true;
 var box = false;
+var boxWidth = 500;
+var boxHeight = 500;
 var shuffle = false;
 var fill = true;
 var colors = [];
@@ -65,8 +67,12 @@ function render(val){
             leaves = slider.noUiSlider.get();
             params = [];
             console.log("leaves: "+leaves);
-            
+
             break;
+        case "height":
+            boxHeight = parseInt(document.getElementById("box-height").value) || boxHeight
+        case "width":
+            boxWidth = parseInt(document.getElementById("box-width").value) || boxWidth
     }
     
     if(flowie != null){
@@ -74,9 +80,10 @@ function render(val){
     }
     
     
-
+    const width = box ? boxWidth : 500
+    const height = box ? boxHeight : 500
     
-    flowie = new Flower(leaves, col, box, fill, 500,500,8, colors, shuffle, params);
+    flowie = new Flower(leaves, col, box, fill, width,height,8, colors, shuffle, params);
     colors = flowie.colorArr;
     document.getElementById("fillcolor1").value = colors[0].toCSS(true);
     document.getElementById("fillcolor2").value = colors[1].toCSS(true);
@@ -84,7 +91,7 @@ function render(val){
     document.getElementById("linecolor2").value = colors[3].toCSS(true);
 
     shuffle = false;
-    flowie.move(new Point(wid/3-250,hei/2-250));
+    flowie.move(new Point(wid/3-(width / 2),hei/2-(height / 2)));
     
     params = flowie.params;
     
@@ -129,6 +136,11 @@ function gui(val){
             document.getElementById("linecolor1").disabled = false;
             document.getElementById("linecolor2").disabled = false;
             break;
+    }
+    if (val === "inbox") {
+        document.getElementById("box-size").classList.remove("hidden")
+    } else if (val === "nobox") {
+        document.getElementById("box-size").classList.add("hidden")
     }
 }
 
